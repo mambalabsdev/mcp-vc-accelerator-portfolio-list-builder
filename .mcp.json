@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mamba-vc-accelerator-portfolio-list-builder": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mambalabsdev/mcp-vc-accelerator-portfolio-list-builder"
+      ],
+      "env": {
+        "APIFY_TOKEN": "your-apify-token"
+      }
+    }
+  }
+}

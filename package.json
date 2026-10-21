@@ -1,0 +1,50 @@
+{
+  "name": "@mambalabsdev/mcp-vc-accelerator-portfolio-list-builder",
+  "version": "1.0.0",
+  "description": "MCP server for VC and Accelerator Portfolio List Builder. Portfolio companies of Y Combinator, a16z, Sequoia, Accel, and any portfolio page, with domain, website, and stage. Runs on Apify. Clay-ready output.",
+  "type": "module",
+  "bin": {
+    "mcp-vc-accelerator-portfolio-list-builder": "./build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "test": "npm run build && node --test test/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "venture-capital",
+    "y-combinator",
+    "startups",
+    "portfolio",
+    "lead-generation",
+    "apify",
+    "clay"
+  ],
+  "author": "Mamba Labs <labs@mambamindsetgrowth.com>",
+  "license": "MIT",
+  "homepage": "https://apify.com/mambalabs/vc-accelerator-portfolio-list-builder",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mambalabsdev/mcp-vc-accelerator-portfolio-list-builder"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "typescript": "5.9.3"
+  },
+  "mcpName": "com.mambabuilt/mcp-vc-accelerator-portfolio-list-builder"
+}

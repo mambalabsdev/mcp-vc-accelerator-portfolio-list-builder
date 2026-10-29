@@ -66,13 +66,13 @@ Restart the client. The `build_portfolio_list` tool appears.
 {
   "investors": ["Y Combinator"],
   "yc_batches": ["W25"],
-  "max_companies_per_source": 100
+  "max_companies_per_source": "100"
 }
 ```
 
 ## Inputs
 
-Every buyer facing input of the actor. Omitted inputs take the actor's own defaults.
+Every buyer facing input of the actor. Omitted inputs take the actor's own defaults. Numbers and yes or no options are sent as text ("100", "true"), which is what the actor accepts; a value that does not parse comes back as one free row that names the field.
 
 | Input | Type | Required | Description |
 |---|---|---|---|
@@ -82,10 +82,11 @@ Every buyer facing input of the actor. Omitted inputs take the actor's own defau
 | `yc_regions` | array | no | Y Combinator regions. |
 | `yc_status` | array | no | active, acquired, public, inactive. |
 | `yc_query` | string | no | Words to search the Y Combinator directory for. |
-| `max_companies_per_source` | integer | no | Company rows per source. Default 500. |
-| `open_company_pages` | boolean | no | Open per company pages when needed. Default true. |
-| `max_detail_pages` | integer | no | Company pages opened per source. Default 200. |
-| `only_new` | boolean | no | Skip companies an earlier run returned. Default false. |
+| `max_companies_per_source` | string | no | Company rows per source, up to 10000, as text such as "100". Default 500. |
+| `open_company_pages` | string | no | "true" or "false". Open per company pages when needed. Default true. |
+| `max_detail_pages` | string | no | Company pages opened per source, up to 1000, as text. Default 200. |
+| `yc_company_pages` | string | no | "true" or "false". Y Combinator only: open each company's YC page for founder names, founder LinkedIn links, and the open role count. Needs `open_company_pages` "true". Default false. |
+| `only_new` | string | no | "true" or "false". Skip companies an earlier run returned. Default false. |
 | `state_key` | string | no | Name for the only new companies memory. |
 | `max_charge_usd` | string | no | Optional cost cap for the run. |
 | `proxy_mode` | string | no | auto or direct. Default auto. |

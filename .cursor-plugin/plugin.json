@@ -1,7 +1,7 @@
 {
   "name": "mcp-vc-accelerator-portfolio-list-builder",
   "displayName": "VC and Accelerator Portfolio List Builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for VC and Accelerator Portfolio List Builder. Portfolio companies of Y Combinator, a16z, Sequoia, Accel, and any portfolio page, with domain, website, and stage. Runs on Apify. Clay-ready output.",
   "author": {
     "name": "Mamba Labs",

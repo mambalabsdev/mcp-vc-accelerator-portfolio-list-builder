@@ -195,7 +195,8 @@ const server = new McpServer({
   version: pkg.version,
 });
 
-// VC and Accelerator Portfolio List Builder (immutable actor ID chH8hrfuoqqolW06m). Every buyer facing input of the actor is exposed.
+// VC and Accelerator Portfolio List Builder (immutable actor ID chH8hrfuoqqolW06m). Every buyer facing input of the actor is exposed. The actor takes numbers and booleans as strings, so those inputs are strings here too.
+const bool = () => z.enum(["true", "false"]).optional();
 server.registerTool(
   "build_portfolio_list",
   {
@@ -228,18 +229,11 @@ server.registerTool(
       yc_query: z.string()
         .optional()
         .describe("Y Combinator only. Words to search the directory for."),
-      max_companies_per_source: z.number().int().min(1).max(10000)
-        .optional()
-        .describe("Company rows per source. Default 500."),
-      open_company_pages: z.boolean()
-        .optional()
-        .describe("Open per company pages when a portfolio page links only to them. Default true."),
-      max_detail_pages: z.number().int().min(1).max(1000)
-        .optional()
-        .describe("Company pages opened per source. Default 200."),
-      only_new: z.boolean()
-        .optional()
-        .describe("Skip companies an earlier run returned for the same source (free). Default false."),
+      max_companies_per_source: z.string().optional().describe("Company rows per source, up to 10000. Each company row with a domain is billed. Default 500."),
+      open_company_pages: bool().describe("Open per company pages when a portfolio page links only to them. Default true."),
+      max_detail_pages: z.string().optional().describe("Company pages opened per source, up to 1000. Default 200."),
+      yc_company_pages: bool().describe("Y Combinator only. true opens each company's YC page (one page per company, up to max_detail_pages) to read founder names, founder LinkedIn links, and the open role count. Needs open_company_pages true. Default false."),
+      only_new: bool().describe("Skip companies an earlier run returned for the same source (free). Default false."),
       state_key: z.string()
         .optional()
         .describe("Optional name for the only new companies memory."),

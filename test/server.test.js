@@ -16,7 +16,7 @@ const ACTOR_REQUIRED = [];
 // Every input the live actor exposes to a buyer must be exposed by the tool.
 // Hidden schema fields are excluded by rule: source_tag is the landing page
 // attribution tag the actor sets for itself, not something a caller supplies.
-const ACTOR_INPUTS = ["investors", "max_charge_usd", "max_companies_per_source", "max_detail_pages", "only_new", "open_company_pages", "proxy_mode", "state_key", "yc_batches", "yc_industries", "yc_query", "yc_regions", "yc_status"];
+const ACTOR_INPUTS = ["investors", "max_charge_usd", "max_companies_per_source", "max_detail_pages", "only_new", "open_company_pages", "proxy_mode", "state_key", "yc_batches", "yc_company_pages", "yc_industries", "yc_query", "yc_regions", "yc_status"];
 // The actor takes no key of any kind.
 
 // Speak MCP over stdio to the built server and return the tools/list result.
